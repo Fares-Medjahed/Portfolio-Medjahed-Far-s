@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Medjahed Farès" description="About Medjahed Farès">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Découvrez mon parcours"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="JMedjahed Farès at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						En tant que développeur web, j'ai une passion pour l'apprentissage continu des nouvelles technologies. Je suis capable de m'adapter rapidement aux évolutions constantes de l'industrie. 
+						</p>
+						<p>
+							Mon objectif principal est de progresser en permanence.
+						J'ai acquis de l'expérience dans la création de sites web, le développement d'applications web et la gestion de bases de données. Ma curiosité naturelle me pousse à explorer de nouveaux langages de programmation et des frameworks innovants.
+						</p>
+						<p>
+						Ce qui me motive le plus dans ce domaine, c'est de contribuer à la création d'expériences utilisateur exceptionnelles et de participer à des projets qui explorent les possibilités de la technologie web. Je crois en un avenir prometteur pour le web, et je suis déterminé à jouer un rôle actif dans cette évolution passionnante.
+						</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>J'ai obtenu un baccalauréat en technologie, suivi d'un DUT en informatique, et je suis actuellement en troisième année d'études.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Travail en équipe ,
+						Curiosité ,
+						Créativité ,
+						Apprentissage rapide ,
+						Adaptabilité</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
